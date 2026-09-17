@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iop-cli"
+description = "Run a named sequence of shell commands with variables, in the current directory."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.8"
+dynamic = ["version"]
+dependencies = [
+    "tomli; python_version < '3.11'",
+]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/i-618/iop-cli"
+Repository = "https://github.com/i-618/iop-cli"
+Issues = "https://github.com/i-618/iop-cli/issues"
+
+[project.scripts]
+iop = "iop.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.hatch.version]
+path = "iop/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["iop"]

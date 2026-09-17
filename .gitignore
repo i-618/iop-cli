@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# project-specific additions
+data/
+node_modules/
+
+# uv is used here only as a multi-interpreter test runner, not as this
+# project's dependency manager -- pyproject.toml stays the sole source of
+# truth, so the lockfile it auto-generates on `uv run` is a local
+# convenience artifact, not something to track.
+uv.lock
